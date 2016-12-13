@@ -339,6 +339,15 @@ body {
     }
 }
 
+#row4 {
+    height: auto;
+    width: 100%;
+    @extend .skewDownLeft;
+    margin-top: -3vw;
+    display: flex;
+
+}
+
 .boksBig {
     z-index: -2;
     -webkit-flex-direction: row; /* Safari */
@@ -568,4 +577,141 @@ footer {
 @media only screen 
     and (max-width: 600px) {
         
+}
+
+
+
+
+/* ------------- styling til tables ------------- */
+
+#lBoardCont {
+    height: 100%;
+    width: 100%;
+    background-color: #FA8072;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    
+}
+
+.sortByHead {
+    padding-top: 50px;
+    vertical-align: middle;
+    text-align: center;
+    height: 100px;
+}
+
+.sortByHead > * {
+    vertical-align:middle
+}
+
+.sortByHead p:first-child {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.sortByHead p {
+    margin: 0;
+    font-family: 'Cabin Sketch', cursive;
+    font-weight: 700;
+    transition: 0.5s font-size;
+}
+
+.sortByHead .score_big{
+    margin: 0;
+    display: inline-block;
+    font-size: 40pt;
+    padding: 0 20px 0 20px;
+}
+
+.sortByHead .score_small{
+    margin: 0;
+    display: inline-block;
+    font-size: 14pt;
+    padding: 0 10px 0 10px;
+}
+
+
+.sortByHead img {
+    display: inline-block;
+    height: 50px;
+}
+
+.sortByHead img:hover {
+    cursor: pointer;
+}
+
+#downArrow {
+    transform: rotate(90deg);
+    height: 70px;
+}
+
+#leftArrow {
+    transform: rotate(180deg);
+    margin-right: 40px;
+}
+
+#rightArrow{
+    margin-left: 40px;
+}
+
+#leftText {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+#rightText {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.leaderboard {
+    text-align: right;
+    color: white;
+    font-size: 12pt;
+    margin: 50px auto 0 auto;
+    border-collapse: separate;
+    border-spacing: 0px 0px;
+}
+
+#lBoardHead th{
+    padding: 5px 10px 5px 0;
+}
+
+.cell {
+    padding: 5px 10px 5px 0;
+    width: 120px;
+    border-top: 1px solid white;
+}
+
+td:nth-child(7) {
+    font-weight: bold;
+}
+
+col:nth-child(6) {
+    
+}
+
+col {
+    transition: background 0.5s;
+}
+
+.bgCol6 {
+    //background: #4D8963;
+}
+
+.bgCol7 {
+    //background: #4D8963;
+}
+
+#loadMore {
+    transform: rotate(90deg);
+    height: 30px;
+}
+
+/* 
+INSERT INTO score (uID, type, point) VALUES(23, 3, 30) ON DUPLICATE KEY UPDATE point="17"
+*/
+
+#taber {
+    background: salmon;
 }

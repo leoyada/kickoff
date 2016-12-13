@@ -59,6 +59,28 @@
                 <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div>
             </div>
         </div>
+        <div id="row4">
+           <div id="lBoardCont">
+
+                <h1>FUCK YOU</h1>
+                <p>Her kan du se leaderboard</p>
+
+                <img src="images/modal_pil-10.svg" id="downArrow" onclick="showBoard()">
+
+                <div class="sortByHead">
+                    <p>Se scoren for</p>
+                    <img src="images/modal_pil-10.svg" id="leftArrow" onclick="lbHeadline('left')">
+                    <p class="score_small" id="score_f" onclick="lbHeadline('f')">FODBOLD</p>
+                    <p class="score_small" id="score_h" onclick="lbHeadline('h')">HÅNDBOLD</p>
+                    <p class="score_small" id="score_b" onclick="lbHeadline('b')">BASKETBALL</p>
+                    <p class="score_big" id="score_o" onclick="lbHeadline('o')">OVERALL</p>
+                    <img src="images/modal_pil-10.svg"  id="rightArrow" onclick="lbHeadline('right')">
+                </div>
+                <div id="table">
+                </div> <!-- /#table-->
+                <img src="images/modal_pil-10.svg" id="loadMore" onclick="fiveMore('test')"></img>
+            </div> <!-- /#lBoardCont--> 
+        </div>
         <div id="socialfeed">
             <h1>Følg os!</h1>
         </div>
