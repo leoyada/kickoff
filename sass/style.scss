@@ -3,7 +3,9 @@
 @import url(https://fonts.googleapis.com/css?family=Abel);
 
 
-/* ----- @extends ------ */
+/* ======================================================
+   @extends
+   ====================================================== */
 
 .skewDownRight {
     -webkit-clip-path: polygon(0 0, 100% 3vw, 100% 100%, 0% 100%);
@@ -15,7 +17,9 @@
     clip-path: polygon(0 3vw, 100% 0%, 100% 100%, 0% 100%);
 }
 
-/* --------- variabler ----------- */
+/* ======================================================
+   Variables
+   ====================================================== */
 
 $green: #508749;
 $yellow: #e9d15f;
@@ -25,28 +29,30 @@ $orange: #ef661c;
 $lightblue: #42b4e6;
 
 $opacity: 0.8;
+$lessopacity: 0.2;
 $greenO: rgba(80, 135, 73, $opacity);
-$greenI: rgba(80, 135, 73, 0);
+$greenI: rgba(80, 135, 73, $lessopacity);
 $yellowO: rgba(233, 209, 95, $opacity);
-$yellowI: rgba(233, 209, 95, 0);
+$yellowI: rgba(233, 209, 95, $lessopacity);
 $darkblueO: rgba(0, 59, 96, $opacity);
-$darkblueI: rgba(0, 59, 96, 0);
+$darkblueI: rgba(0, 59, 96, $lessopacity);
 $redO: rgba(211, 85, 64, $opacity);
-$redI: rgba(211, 85, 64, 0);
+$redI: rgba(211, 85, 64, $lessopacity);
 $orangeO: rgba(239, 102, 28, $opacity);
-$orangeI: rgba(239, 102, 28, 0);
+$orangeI: rgba(239, 102, 28, $lessopacity);
 $lightblueO: rgba(66, 180, 230, $opacity);
-$lightblueI: rgba(66, 180, 230, 0);
+$lightblueI: rgba(66, 180, 230, $lessopacity);
 $blackO: rgba(0, 0, 0, $opacity);
-$blackI: rgba(0, 0, 0, 0);
+$blackI: rgba(0, 0, 0, $lessopacity);
 
 
-/* ------- style ------------- */
+/* ======================================================
+   Style
+   ====================================================== */
 
 body {
     margin: 0;
     padding: 0;
-    font-size: 0;
     height: 100%;
     width: 100%;
     font-family: 'Open Sans', sans-serif;
@@ -78,14 +84,6 @@ body {
 */
 
 #navbar {
-    #bonus {
-        position: absolute;
-        z-index: 80;
-        font-size: 7pt;
-        color: white;
-        right: 5px;
-        cursor: pointer;
-    }
     
     ul {
         position: absolute;
@@ -163,7 +161,6 @@ body {
         margin-left: -2.8vw;
         transition: margin-left 0.3s;
         padding: 7px 3px 5px 0px;
-        
     }
     
     #hideSideLogo {
@@ -204,7 +201,7 @@ body {
         left: 15%;
         margin: 0;
         padding: 0;
-        font-size: 4vw;
+        font-size: 3.8vw;
         font-family: 'Cabin Sketch', cursive;
         font-weight: 700;
         color: white;
@@ -217,7 +214,7 @@ body {
         left: 15%;
         margin: 0px 0 0 0;
         padding: 0;
-        font-size: 1.2vw;
+        font-size: 1vw;
         color: white;
         padding: 0;
         
@@ -269,8 +266,11 @@ body {
     @extend .skewDownRight;
     display: flex;
     margin-top: -3vw;
-    
     #boks1 {
+        background-image: url(../images/family_ball.jpg);
+        background-position: 0% 30%;
+        min-height: 40vh;
+        
         div {
             background: $darkblueO;
             &:hover {
@@ -279,11 +279,10 @@ body {
         }
     }
     #boks2 {
+        background-image: url(../images/bg-chalkboard.jpg);
+        
         div {
-            background: $blackO;
-            &:hover {
-                background: $blackI;
-            }
+            cursor: default;
         }
     }
 }
@@ -296,6 +295,9 @@ body {
     display: flex;
     
     #boks3 {
+        background-image: url(../images/field.jpg);
+        min-height: 40vh;
+        
         div {
             background: $orangeO;
             &:hover {
@@ -304,6 +306,9 @@ body {
         }
     }
     #boks4 {
+        background-image: url(../images/food.jpg);
+        background-position: 0% 35%;
+        
         div {
             background: $greenO;
             &:hover {
@@ -322,6 +327,10 @@ body {
     z-index: 5;
     
     #boks5 {
+        background-image: url(../images/partner_thumb.jpg);
+        background-position: 0% 30%;
+        min-height: 40vh;
+        
         div {
             background: $lightblueO;
             &:hover {
@@ -330,6 +339,9 @@ body {
         }
     }
     #boks6 {
+        background-image: url(../images/kids_sport.jpg);
+        background-position: 0% 35%;
+        
         div {
             background: $redO;
             &:hover {
@@ -367,33 +379,16 @@ body {
     background-size: cover;
 }
 
-#boks1 {
-    background-image: url(../images/family_ball.jpg);
-}
-
-#boks2 {
-    background-image: url(../images/bg-chalkboard.jpg);
-}
-
-#boks3 {
-    background-image: url(../images/field.jpg);
-}
-
-#boks4 {
-    background-image: url(../images/food.jpg);
-}
-
-#boks5 {
-    background-image: url(../images/partner_thumb.jpg);
-}
-#boks6 {
-    background-image: url(../images/kids_sport.jpg);
-}
-
-.text {
+.sectionheading {
     color: white;
-    font-size: 12pt;
-    text-shadow: 0px 0px 3px #000;
+    font-size: 4em;
+    font-family: 'Cabin Sketch', cursive;
+}
+
+.sectiontext {
+    color: white;
+    font-size: 1.2em;
+    width: 20vw;
     //padding: 6vw 2vw 6vw 2vw;
 
 }
@@ -407,7 +402,7 @@ body {
     box-sizing: border-box;
     background-size: cover;
     padding: 6vw;
-    transition: background-color 0.5s;
+    transition: background-color 0.8s;
     cursor: pointer;
 }
 
@@ -420,12 +415,45 @@ body {
     box-sizing: border-box;
     background-size: cover;
     padding: 6vw;
-    transition: background-color 0.5s;
+    transition: background-color 0.8s;
     cursor: pointer;
 }
 
+/* ======================================================
+   Countdown
+   ====================================================== */
 
-/* ----- sociale fødder / socialfeed ---- */
+#clockdiv{
+    height: 100px;
+    width: 100%;
+    color: #fff;
+    font-weight: 100;
+    text-align: left;
+    font-size: 0px;
+}
+
+#clockdiv > div{
+    display: inline-block;
+    margin: 10px 10px 10px 10px;
+    padding: 0;
+    text-align: center;
+}
+
+#clockdiv div > span{
+    display: inline-block;
+    font-size: 50px;
+    text-align: left;
+    font-weight: 700;
+}
+
+.smalltext{
+    font-size: 16px;
+    text-align: center;
+}
+
+/* ======================================================
+   Social Feed
+   ====================================================== */
 
 #socialfeed {
     height: 80vh;
@@ -434,7 +462,7 @@ body {
     @extend .skewDownLeft;
     margin-top: -3vw;
     
-    h1 {
+        h2 {
         text-align: center;
         margin: 0;
         padding: 6vw 0 0 0;
@@ -445,7 +473,9 @@ body {
     }
 }
 
-/* --- modalllllllll --- */
+/* ======================================================
+   Modal
+   ====================================================== */
 
 #modal {
     position: fixed;
@@ -484,31 +514,67 @@ body {
     padding: 4vw;
 }
 
+/* ======================================================
+   Footer
+   ====================================================== */
+
 footer {
+    display: flex;
     background: #303030;
     color: white;
     padding: 1vw 0 2vw 0;
     margin: 0;
-    font-size: 10pt;
+    font-size: 13pt;
     min-height: 80px;
     @extend .skewDownRight;
     margin-top: -3vw;
     
-    p {
-        position: relative;
-        top: 1vw;
+    section {
         width: 70%;
         left: 15%;
-        margin: 0;
-    }
-    
-    #cr {
         position: relative;
-        //bottom: 0;
-        //height: 200px;
-        text-align: center;
-        font-size: 9pt;
-    }
+        display: flex;
+        
+        article {
+            width: 50%;
+            
+            &.footer-left {
+                text-align: left;
+            }
+
+            &.footer-right {
+                text-align: right;
+            }
+            
+            .icon-text {
+                width: 100%;
+                padding-bottom: 0.25em;
+                
+                p {
+                    position: relative;
+                    margin: 0;
+                    line-height: 1.5em;
+                    vertical-align: top;
+                    display: inline-block;
+                }
+
+                img {
+                    height: 1.5em;
+                    width: 1.5em;
+                    display: inline;
+                    padding-right: 1em;
+                }
+            }
+            
+            a {
+                width: 100%;
+                img {
+                    height: 1.5em;
+                    width: 1.5em;
+                }
+            }
+        }
+    } 
 }
 
 /* ---------- under 980px ------------------- */
@@ -560,9 +626,6 @@ footer {
     #sideLogo {
         display: none;
     }
-    .text {
-        font-size: 20px;
-    }
     .overlaySmall {
         padding: 6vw 6vw 11vh 6vw;
     }
@@ -603,6 +666,8 @@ footer {
             clip-path: polygon(0 3vw, 100% 0%, 100% 100%, 0% 100%);
         }
         
+        /*end*/
+        
         #row1, #row2, #row3 {
             margin: 0;
             display: block;
@@ -618,14 +683,29 @@ footer {
         #boks1, #boks3, #boks5 {
             @extend .skewMobileRight;
             margin-top: -3vw;
+            min-height: 30vh;
         }
         
-        #boks2, #boks4, boks6 {
+        #boks2, #boks4, #boks6 {
             @extend .skewMobileLeft;
             margin-top: -3vw;
+            min-height: 40vh;
         }
         
         #row3 #boks6 div {
             z-index: 0;
+        }
+        
+        .sectionheading {
+            font-size: 3em;
+        }
+        
+        .sectiontext {
+            font-size: 1.2em;
+            width: 65vw;
+            margin-top: 1vh;        }
+        
+        #clockdiv div > span{
+            font-size: 10vw;
         }
 }

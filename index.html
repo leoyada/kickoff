@@ -1,25 +1,55 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
     <meta charset="utf-8">
     <title>Aarhus Kickoff 2017</title>
     <meta name="description" content="Aarhus Kickoff 2017">
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable='no'"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Reset.css -->
+    <LINK REL=StyleSheet HREF="css/reset.css" TYPE="text/css">
+
+    <!-- Stylesheet -->
     <LINK REL=StyleSheet HREF="css/style.css" TYPE="text/css">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
 </head>
+
 <body>
 
-    <header> <!-- slet den tossede navbar, den har ingen relevans? -->
+    <header>
+        <!-- slet den tossede navbar, den har ingen relevans? -->
         <div id="navbar">
-            <div id="bonus"><p>Bonus</p></div>
             <ul>
                 <li><a href="#row1">Info</a></li>
                 <li><a href="#row2">Program</a></li>
                 <li><a href="#row2">Mad</a></li>
                 <li><a href="#row3">Partnere</a></li>
                 <li><a href="#row3">Talent</a></li>
-                <li><a href="#">Følg med</a></li>
+                <li><a href="#socialfeed">Følg med</a></li>
             </ul>
         </div>
         <div id="logoCont">
@@ -27,57 +57,133 @@
             <img src="images/modal_pil-10.svg" id="hideTopLogo" onclick="topLogo()">
         </div>
         <div id="sideLogo">
-            <div><a href="#navbar"><img src="images/logo_rotated-30.svg" id="logoRotated"></a></div>
+            <div>
+                <a href="#navbar"><img src="images/logo_rotated-30.svg" id="logoRotated"></a>
+            </div>
             <img src="images/modal_pil-10.svg" id="hideSideLogo" onclick="sideLogo()">
         </div>
     </header>
+
     <div id="container">
         <div id="video">
-            <h1>I'm Mr Meeseeks,<br> look at me!</h1>
-            <p>Existence is pain Jerry, and we will<br>do <span>anything</span> to alleviate that <span>pain!</span></p>
-            <div id="play"><p>Play!</p><img src="images/play-22.svg"></div>
-            
+            <h1>Aarhus Kickoff</h1>
+            <p>Familietid, natur, vennetid, god mad & <span>hygge</span> -
+                <br><span>ALT sammen i sportslige omgivelser</span></p>
+            <div id="play">
+                <p>Play!</p><img src="images/play-22.svg"></div>
+
         </div>
         <div id="row1">
-            <div id="boks1" class="boksSmall"><div class="overlaySmall">
-                <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div>
-            </div><div id="boks2" class="boksBig"><div class="overlayBig">
-                <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div>
+            <div id="boks1" class="boksSmall">
+                <div class="overlaySmall">
+                    <h2 class="sectionheading">Info</h2>
+                    <p class="sectiontext">Aarhus Kickoff 2017 er et weekend event i august for hele familien Tryk her for at læse mere.</p>
+                </div>
+            </div>
+            <div id="boks2" class="boksBig">
+                <div class="overlayBig">
+                    <h2 class="sectionheading">Countdown</h2>
+                    <div id="clockdiv">
+                        <div>
+                            <span class="days"></span>
+                            <div class="smalltext">Dage</div>
+                        </div>
+                        <div>
+                            <span class="hours"></span>
+                            <div class="smalltext">Timer</div>
+                        </div>
+                        <div>
+                            <span class="minutes"></span>
+                            <div class="smalltext">Minutter</div>
+                        </div>
+                        <div>
+                            <span class="seconds"></span>
+                            <div class="smalltext">Sekunder</div>
+                        </div>
+                        <!--
+                         <div>
+                             <span class="hundreds"></span>
+                             <div class="smalltext">Milisekunder</div>
+                           </div>
+                         -->
+                    </div>
+                </div>
             </div>
         </div>
         <div id="row2">
-            <div id="boks3" class="boksBig"><div class="overlayBig">
-                <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div>
-            </div><div id="boks4" class="boksSmall"><div class="overlaySmall">
-                <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div>
+            <div id="boks3" class="boksBig">
+                <div class="overlayBig">
+                    <h2 class="sectionheading">Program</h2>
+                    <p class="sectiontext">Her kan du finde en oversigt over hvad der sker til begivenheden. Tryk her for at se mere.</p>
+                </div>
+            </div>
+            <div id="boks4" class="boksSmall">
+                <div class="overlaySmall">
+                    <h2 class="sectionheading">Mad</h2>
+                    <p class="sectiontext">Der til vil Aarhus Kickoff være et bredt udvalg af madboder. Maden bliver leveret i samarbejde med vores sponsore. Tryk her for at læse mere.</p>
+                </div>
             </div>
         </div>
         <div id="row3">
-            <div id="boks5" class="boksSmall"><div class="overlaySmall">
-                <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div>
-            </div><div id="boks6" class="boksBig"><div class="overlayBig">
-                <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div>
+            <div id="boks5" class="boksSmall">
+                <div class="overlaySmall">
+                    <h2 class="sectionheading">Partnere</h2>
+                    <p class="sectiontext">Til Aarhus Kickoff vil der være mulighed for at udvide dit netværk Her kan du se hvilke partnere vi arbejder sammen med.</p>
+                </div>
+            </div>
+            <div id="boks6" class="boksBig">
+                <div class="overlayBig">
+                    <h2 class="sectionheading">Kickoff Cup 2017</h2>
+                    <p class="sectiontext">Aarhus Kickoff er vært for semifinalerne og finalen i Kickoff Cup 2017.</p>
+                </div>
             </div>
         </div>
         <div id="socialfeed">
-            <h1>Følg os!</h1>
+            <h2>Følg os</h2>
         </div>
-        
+
         <div id="modal">
-            <img src="/images/modal_kryds-09.svg" id="kryds">
+            <img src="images/modal_kryds.svg" id="kryds">
             <div id="modalCont">
-            <p class="text modalText">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div>
+                <p class="modalText">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
         </div>
-        
+
     </div>
-<footer>
-    <p>addresse</p>
-    <p>komtesse</p>
-    <p>baronesse</p>
-    <p id="cr">&#169 Aarhus Kickoff 2017</p>
-    
+
+    <footer>
+        <section>
+
+            <article class="footer-left">
+
+                <div class="icon-text">
+                    <img src="images/location_white.svg">
+                    <p>Stadion Allé 70, 8000 Aarhus C</p>
+                </div>
+                <div class="icon-text">
+                    <img src="images/phone_white.svg">
+                    <p>+ 45 89 38 60 00</p>
+                </div>
+                <div class="icon-text">
+                    <img src="images/mail_white.svg">
+                    <p>kontakt@aarhuskickoff.dk</p>
+                </div>
+                
+            </article>
+
+            <article class="footer-right">
+                <a href="#"><img src="images/facebook_white.svg"></a>
+                <a href="#"><img src="images/facebook_white.svg"></a>
+                <a href="#"><img src="images/facebook_white.svg"></a>
+            </article>
+
+        </section>
+
+    </footer>
+
+    <!-- Javascript -->
     <script src="js/script.js" type="text/javascript"></script>
-</footer>
+
 </body>
 
 </html>
