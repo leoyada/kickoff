@@ -1,0 +1,571 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700|Open+Sans:400,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
+@import url(https://fonts.googleapis.com/css?family=Abel);
+
+
+/* ----- @extends ------ */
+
+.skewDownRight {
+    -webkit-clip-path: polygon(0 0, 100% 3vw, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 3vw, 100% 100%, 0% 100%);
+}
+
+.skewDownLeft {
+    -webkit-clip-path: polygon(0 3vw, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 3vw, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/* --------- variabler ----------- */
+
+$green: #508749;
+$yellow: #e9d15f;
+$darkblue: #003b60;
+$red: #d35540;
+$orange: #ef661c;
+$lightblue: #42b4e6;
+
+$opacity: 0.7;
+$greenO: rgba(80, 135, 73, $opacity);
+$greenI: rgba(80, 135, 73, 0);
+$yellowO: rgba(233, 209, 95, $opacity);
+$yellowI: rgba(233, 209, 95, 0);
+$darkblueO: rgba(0, 59, 96, $opacity);
+$darkblueI: rgba(0, 59, 96, 0);
+$redO: rgba(211, 85, 64, $opacity);
+$redI: rgba(211, 85, 64, 0);
+$orangeO: rgba(239, 102, 28, $opacity);
+$orangeI: rgba(239, 102, 28, 0);
+$lightblueO: rgba(66, 180, 230, $opacity);
+$lightblueI: rgba(66, 180, 230, 0);
+$blackO: rgba(0, 0, 0, $opacity);
+$blackI: rgba(0, 0, 0, 0);
+
+
+/* ------- style ------------- */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* //skrå navbar
+#navbar {
+    padding: 2vw 0 3vw 0;
+    background: #303030;
+    
+    ul {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: 70%;
+        left: 15%;
+        text-align: left;
+        
+        li {
+            display: inline-block;
+            padding: 0 1.7vw 0 0;
+            margin: 0;
+            font-size: 12pt;
+            color: white;
+            
+        }
+    }
+}
+*/
+
+#navbar {
+    #bonus {
+        position: absolute;
+        z-index: 80;
+        font-size: 7pt;
+        color: white;
+        right: 5px;
+        cursor: pointer;
+    }
+    
+    ul {
+        position: absolute;
+        z-index: 11;
+        margin: 6vw 0 0 0;
+        padding: 0vw 0 1vw 0;
+        width: 70%;
+        left: 15%;
+        text-align: right;
+        
+        li {
+            display: inline-block;
+            //padding: 0 1.7vw 0 0;
+            padding: 0 0 0 2vw;
+            margin: 0;
+            //font-family: 'Ubuntu', sans-serif;
+            //font-family: 'Abel', sans-serif;
+            font-weight: 500;
+            font-size: 12pt;
+            text-transform: uppercase;
+            
+            a {
+                text-decoration: none;
+                color: white;
+                
+                &:hover:nth-child(1) {
+                    color: lightblue;
+                }
+            }
+        }
+    }
+}
+
+#logoCont {
+    position: absolute;
+    z-index: 10;
+    width: 70%;
+    top: 0;
+    left: 15%;
+    margin: 0 0 0 0;
+    text-align: left;
+    
+    #logo {
+        height: 11vw;
+        background: #303030;
+        padding: 20px;
+        transition: margin-top 0.5s;
+    }
+    
+    #hideTopLogo {
+        position: absolute;
+        width: 1.5vw;
+        top: 0;
+        margin: 0.5vw 0 0 2vw;
+        cursor: pointer;
+        transform: rotate(270deg);
+        transition: all 0.5s;
+    }
+}
+
+#sideLogo {
+    width: 3vw;
+    height: 18vw;
+    position: fixed;
+    z-index: 12;
+    
+    top: 50%;
+    margin-top: -9vw;
+    text-align: center;
+    
+    div {
+        width: 100%;
+        height: 100%;
+        background: #303030;
+        margin-left: -2.8vw;
+        transition: margin-left 0.3s;
+        padding: 7px 3px 5px 0px;
+        
+    }
+    
+    #hideSideLogo {
+        width: 1.5vw;
+        margin: 2vw 0 0 0;
+        cursor: pointer;
+        transform: rotate(180deg);
+        transition: all 0.5s;
+    }
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#video {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    /*
+    -webkit-clip-path: polygon(0 3vw, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 3vw, 100% 0%, 100% 100%, 0% 100%);
+    margin-top: -3vw;
+    */
+    background: #101010;
+    //background-image: url(../images/Fawlty-Towers-The-Movie.jpg);
+    background-size: cover;
+    text-align: right;
+    transition: opacity 0.5s;
+    
+    h1 {
+        position: relative;
+        top: 33%;
+        width: 70%;
+        left: 15%;
+        margin: 0;
+        padding: 0;
+        font-size: 4vw;
+        font-family: 'Cabin Sketch', cursive;
+        font-weight: 700;
+        color: white;
+    }
+    
+    p { 
+        position: relative;
+        top: 33%;
+        width: 70%;
+        left: 15%;
+        margin: 0px 0 0 0;
+        padding: 0;
+        font-size: 1.2vw;
+        color: white;
+        padding: 0;
+        
+        span:first-of-type {
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+    }
+    
+    #play {
+        width: 220px;
+        position: relative;
+        display: flex;
+        text-align: left;
+        left: 50%;
+        top: 30%;
+        margin-left: -110px;
+        transition: top 0.2s;
+        
+        &:hover {
+            cursor: pointer;
+            top: 29%;
+        }
+        
+        p {
+            display: inline-block;
+            font-size: 40pt;
+            width: auto;
+            top: auto;
+            color: white;
+            font-family: 'Cabin Sketch', cursive;
+            font-weight: 700;
+            line-height: 80px;
+            margin: 0;
+            padding: 0 20px 0 0;
+            left: 0;
+        }
+        
+        img {
+            height: 80px;
+            display: inline-block;
+        }
+    }
+}
+
+
+#row1 {
+    width: 100%;
+    @extend .skewDownRight;
+    display: flex;
+    margin-top: -3vw;
+    
+    #boks1 {
+        div {
+            background: $darkblueO;
+            &:hover {
+                background: $darkblueI;
+            }
+        }
+    }
+    #boks2 {
+        div {
+            background: $blackO;
+            &:hover {
+                background: $blackI;
+            }
+        }
+    }
+}
+
+#row2 {
+    height: auto;
+    width: 100%;
+    @extend .skewDownLeft;
+    margin-top: -3vw;
+    display: flex;
+    
+    #boks3 {
+        div {
+            background: $orangeO;
+            &:hover {
+                background: $orangeI;
+            }
+        }
+    }
+    #boks4 {
+        div {
+            background: $greenO;
+            &:hover {
+                background: $greenI;
+            }
+        }
+    }
+}
+
+#row3 {
+    height: auto;
+    width: 100%;
+    @extend .skewDownRight;
+    margin-top: -3vw;
+    display: flex;
+    z-index: 5;
+    
+    #boks5 {
+        div {
+            background: $lightblueO;
+            &:hover {
+                background: $lightblueI;
+            }
+        }
+    }
+    #boks6 {
+        div {
+            background: $redO;
+            &:hover {
+                background: $redI;
+            }
+        }
+    }
+}
+
+.boksBig {
+    z-index: -2;
+    -webkit-flex-direction: row; /* Safari */
+    flex-direction: row;
+    vertical-align: top;
+    display: flex;
+    top: 0;
+    width: 57%;
+    box-sizing: border-box;
+    //background: lightblue;
+    background-image: url(../images/food.jpg);
+    background-size: cover;
+}
+
+.boksSmall {
+    z-index: -2;
+    display: flex;
+    -webkit-flex-direction: row; /* Safari */
+    flex-direction: row;
+    vertical-align: top;
+    top: 0;
+    width: 43%;
+    //background: salmon;
+    box-sizing: border-box;
+    background-image: url(../images/food.jpg);
+    background-size: cover;
+}
+
+.text {
+    color: white;
+    font-size: 12pt;
+    text-shadow: 0px 0px 3px #000;
+    //padding: 6vw 2vw 6vw 2vw;
+
+}
+
+.overlayBig { 
+    z-index: -1;
+    -webkit-flex-direction: row; /* Safari */
+    flex-direction: row;
+    vertical-align: top;
+    width: 100%;
+    box-sizing: border-box;
+    background-size: cover;
+    padding: 6vw;
+    transition: background-color 0.5s;
+    cursor: pointer;
+}
+
+.overlaySmall { 
+    z-index: -1;
+    -webkit-flex-direction: row; /* Safari */
+    flex-direction: row;
+    vertical-align: top;
+    width: 100%;
+    box-sizing: border-box;
+    background-size: cover;
+    padding: 6vw;
+    transition: background-color 0.5s;
+    cursor: pointer;
+}
+
+
+/* ----- sociale fødder / socialfeed ---- */
+
+#socialfeed {
+    height: 80vh;
+    width: 100%;
+    background: lightblue;
+    @extend .skewDownLeft;
+    margin-top: -3vw;
+    
+    h1 {
+        text-align: center;
+        margin: 0;
+        padding: 6vw 0 0 0;
+        font-size: 4vw;
+        font-family: 'Cabin Sketch', cursive;
+        font-weight: 700;
+        color: white;
+    }
+}
+
+/* --- modalllllllll --- */
+
+#modal {
+    position: fixed;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background-color: rgba(0,0,0,0.85);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+}
+
+#modalCont {
+    position: relative;
+    z-index: 6;
+    width: 60%;
+    left: 20%;
+    top: 20%;
+}
+
+#kryds {
+    width: 40px;
+    position: absolute;
+    top: 14%;
+    left: 81%;
+}
+
+#kryds:hover {
+    cursor: pointer;
+}
+
+.modalText {
+    background-image: url(../images/modal-04.svg);
+    box-sizing: border-box;
+    padding: 4vw;
+}
+
+footer {
+    background: #303030;
+    color: white;
+    padding: 1vw 0 2vw 0;
+    margin: 0;
+    font-size: 10pt;
+    min-height: 80px;
+    @extend .skewDownRight;
+    margin-top: -3vw;
+    
+    p {
+        position: relative;
+        top: 1vw;
+        width: 70%;
+        left: 15%;
+        margin: 0;
+    }
+    
+    #cr {
+        position: relative;
+        //bottom: 0;
+        //height: 200px;
+        text-align: center;
+        font-size: 9pt;
+    }
+}
+
+/* ---------- under 1000px ------------------- */
+
+@media only screen 
+    and (max-width: 1000px) {
+    #navbar {
+        display: none;
+    }
+    #video {
+        h1 {
+            display: none;
+        }
+        p {
+            display: none;
+        }
+
+        #play {
+            top: 45%;
+            width: 300px;
+            margin-left: -150px;
+            
+            p {
+                font-size: 60pt;
+                line-height: 120px;
+            }
+            
+            img {
+                height: 120px;
+            }
+
+            &:hover {
+                top:44%;
+            }
+        }
+    }
+    #logoCont {
+        //display: none;
+        
+        #logo {
+            height: 200px;
+        }
+        
+        #hideTopLogo {
+            width: 40px;
+            margin: 0.5vw 0 0 30px;
+        }
+    }
+    #sideLogo {
+        display: none;
+    }
+    .text {
+        font-size: 20px;
+    }
+    .overlaySmall {
+        padding: 6vw 6vw 11vh 6vw;
+    }
+    
+        
+        #socialfeed {
+            
+            h1 {
+                font-size: 80pt;
+            }
+        }
+        
+    footer {
+        font-size: 14pt;
+        padding: 20px 0 30px 0;
+        
+        #cr{
+            font-size: 11pt;
+            //padding-bottom: 10px;
+        }
+    }
+}
+
+/* ---------- under 600px ------------------- */
+
+@media only screen 
+    and (max-width: 600px) {
+        
+}
