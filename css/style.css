@@ -193,11 +193,11 @@ body {
   display: flex;
   margin-top: -3vw; }
   #row1 #boks1 div {
-    background: rgba(0, 59, 96, 0.7); }
+    background: rgba(0, 59, 96, 0.8); }
     #row1 #boks1 div:hover {
       background: rgba(0, 59, 96, 0); }
   #row1 #boks2 div {
-    background: rgba(0, 0, 0, 0.7); }
+    background: rgba(0, 0, 0, 0.8); }
     #row1 #boks2 div:hover {
       background: transparent; }
 
@@ -207,11 +207,11 @@ body {
   margin-top: -3vw;
   display: flex; }
   #row2 #boks3 div {
-    background: rgba(239, 102, 28, 0.7); }
+    background: rgba(239, 102, 28, 0.8); }
     #row2 #boks3 div:hover {
       background: rgba(239, 102, 28, 0); }
   #row2 #boks4 div {
-    background: rgba(80, 135, 73, 0.7); }
+    background: rgba(80, 135, 73, 0.8); }
     #row2 #boks4 div:hover {
       background: rgba(80, 135, 73, 0); }
 
@@ -222,11 +222,11 @@ body {
   display: flex;
   z-index: 5; }
   #row3 #boks5 div {
-    background: rgba(66, 180, 230, 0.7); }
+    background: rgba(66, 180, 230, 0.8); }
     #row3 #boks5 div:hover {
       background: rgba(66, 180, 230, 0); }
   #row3 #boks6 div {
-    background: rgba(211, 85, 64, 0.7); }
+    background: rgba(211, 85, 64, 0.8); }
     #row3 #boks6 div:hover {
       background: rgba(211, 85, 64, 0); }
 
@@ -255,6 +255,24 @@ body {
   box-sizing: border-box;
   background-image: url(../images/food.jpg);
   background-size: cover; }
+
+#boks1 {
+  background-image: url(../images/family_ball.jpg); }
+
+#boks2 {
+  background-image: url(../images/bg-chalkboard.jpg); }
+
+#boks3 {
+  background-image: url(../images/field.jpg); }
+
+#boks4 {
+  background-image: url(../images/food.jpg); }
+
+#boks5 {
+  background-image: url(../images/partner_thumb.jpg); }
+
+#boks6 {
+  background-image: url(../images/kids_sport.jpg); }
 
 .text {
   color: white;
@@ -354,8 +372,8 @@ footer {
     text-align: center;
     font-size: 9pt; }
 
-/* ---------- under 1000px ------------------- */
-@media only screen and (max-width: 1000px) {
+/* ---------- under 980px ------------------- */
+@media only screen and (max-width: 980px) {
   #navbar {
     display: none; }
 
@@ -398,6 +416,34 @@ footer {
     padding: 20px 0 30px 0; }
     footer #cr {
       font-size: 11pt; } }
-/* ---------- under 600px ------------------- */
+/* ---------- under 768px ------------------- */
+@media only screen and (max-width: 768px) {
+  /* ----- @extends ------ */
+  .skewMobileRight, #boks1, #boks3, #boks5 {
+    -webkit-clip-path: polygon(0 0, 100% 3vw, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 3vw, 100% 100%, 0% 100%); }
+
+  .skewMobileLeft, #boks2, #boks4, boks6 {
+    -webkit-clip-path: polygon(0 3vw, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 3vw, 100% 0%, 100% 100%, 0% 100%); }
+
+  #row1, #row2, #row3 {
+    margin: 0;
+    display: block;
+    clip-path: none;
+    -webkit-clip-path: none; }
+
+  .boksBig, .boksSmall {
+    display: flex;
+    width: 100%; }
+
+  #boks1, #boks3, #boks5 {
+    margin-top: -3vw; }
+
+  #boks2, #boks4, boks6 {
+    margin-top: -3vw; }
+
+  #row3 #boks6 div {
+    z-index: 0; } }
 
 /*# sourceMappingURL=style.css.map */
