@@ -423,7 +423,7 @@ footer {
     -webkit-clip-path: polygon(0 0, 100% 3vw, 100% 100%, 0% 100%);
     clip-path: polygon(0 0, 100% 3vw, 100% 100%, 0% 100%); }
 
-  .skewMobileLeft, #boks2, #boks4, boks6 {
+  .skewMobileLeft, #boks2, #boks4, #boks6 {
     -webkit-clip-path: polygon(0 3vw, 100% 0%, 100% 100%, 0% 100%);
     clip-path: polygon(0 3vw, 100% 0%, 100% 100%, 0% 100%); }
 
@@ -440,7 +440,7 @@ footer {
   #boks1, #boks3, #boks5 {
     margin-top: -3vw; }
 
-  #boks2, #boks4, boks6 {
+  #boks2, #boks4, #boks6 {
     margin-top: -3vw; }
 
   #row3 #boks6 div {
