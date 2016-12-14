@@ -238,3 +238,229 @@ function switchDay(day) {
     //$("#arenaText" + day).css("display","block");
     console.log("#arenaText" + day);
 }
+
+/* -------------- database script -------------- */
+
+var active = 4;
+var once = 1;
+var limit = 0;
+var delay = 50;
+var toggle = 1;
+var maxheight = 280;    //passer til desktop
+                        //cellestørrelse = 32px * 5 = 160px, adder 20 mere
+
+$score_f = $("#score_f");
+$score_h = $("#score_h");
+$score_b = $("#score_b");
+$score_o = $("#score_o");
+
+function h() {
+    //test
+    $score_h.css("font-size", "40pt");
+}
+
+function showBoard(a){
+    if (once) {
+        once = 0;
+        fiveMore(limit);
+    }
+    
+    setTimeout(function(){
+        //console.log(active);
+        bgColor(active);
+        fontWeight(active);
+    }, delay);
+    
+    $("#showLimit").html("Rang 1 til maks " + limit);
+    
+    if (toggle) {
+        if (a == "update") {
+            $("#leaderboard").css("max-height","calc(" + maxheight + "px + 10vw)");
+            console.log("max-height","calc(" + maxheight + "px + 10vw)");
+            return;
+        }
+        toggle = !toggle;
+        $("#leaderboard").css("max-height","calc(" + maxheight + "px + 10vw)");
+        $("#downArrow").css("transform","rotate(270deg)");
+        $("#teaser").html("Tryk for at gemme pointtavlen");
+    } else {
+        if (a == "update") {
+            $("#leaderboard").css("max-height","calc(" + maxheight + "px + 10vw)");
+            console.log("max-height","calc(" + maxheight + "px + 10vw)");
+            return;
+        }
+        toggle = !toggle;
+        $("#leaderboard").css("max-height","10vw");
+        $("#downArrow").css("transform","rotate(90deg)");
+        $("#teaser").html("Tryk her for at se pointtavlen!");
+    }    
+}
+
+function lbHeadline(turn) {
+    switch(active) {
+        case 1:
+            if(leftOrRight(turn)) {
+                carousel("plus");
+                lbSize("score_o");
+                sort("o");
+            } else {
+                carousel("minus");
+                lbSize("score_h");
+                sort("h");
+            }
+            break;
+        case 2:
+            if(leftOrRight(turn)) {
+                carousel("plus");
+                lbSize("score_f");
+                sort("f");
+            } else {
+                carousel("minus");
+                lbSize("score_b");  
+                sort("b");
+            }
+            break;
+        case 3:
+            if(leftOrRight(turn)) {
+                carousel("plus");
+                lbSize("score_h");
+                sort("h");
+            } else {
+                carousel("minus");
+                lbSize("score_o");
+                sort("o");
+            }
+            break;
+        case 4:
+            if(leftOrRight(turn)) {
+                carousel("plus");
+                lbSize("score_b");
+                sort("b");
+            } else {
+                carousel("minus");
+                lbSize("score_f");
+                sort("f");
+            }
+            break;
+        default:
+            break;
+    }
+    switch(turn) {
+        case 'f':
+            active = 1;
+            lbSize("score_f");
+            sort("f");
+            break;
+        case 'h':
+            active = 2;
+            lbSize("score_h");
+            sort("h");
+            break;
+        case 'b':
+            active = 3;
+            lbSize("score_b");
+            sort("b");
+            break;
+        case 'o':
+            active = 4;
+            lbSize("score_o");
+            sort("o");
+            break;
+        default:
+            break;
+    }
+    //settimeout er nødvendig, for noget af CSS'en tager effekt
+    setTimeout(function(){
+        //console.log(active);
+        bgColor(active);
+        fontWeight(active);
+    }, delay);
+}
+
+function leftOrRight(a) {
+    if (a == 'left') {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+function carousel(spinThatShit) {
+    if (spinThatShit == "plus") {
+        active--;
+        if (active < 1) {
+            active = 4;
+        }
+    } else {
+        active++;
+        if (active > 4) {
+            active = 1;
+        }
+    }
+}
+
+function lbSize(biggie) {
+    $score_f.css("font-size", "14pt");
+    $score_h.css("font-size", "14pt");
+    $score_b.css("font-size", "14pt");
+    $score_o.css("font-size", "14pt");
+    $("#" + biggie).css("font-size", "40pt");
+}
+
+function bgColor(a) {
+    a = a + 3;
+    
+    //for-loop for at sætte baggrund til 'none'
+    for(var i = 4; i < 8; i++) {
+        $(".bgCol" + i ).css("background","none");
+    }
+    //console.log(a);
+    $(".bgCol" + a ).css("background","#4D8963");
+    //console.log(".bgCol" + a);
+}
+
+function fontWeight(a) {
+    a = a + 3;
+    //for-loop for at sætte alle font-weights til 'normal'
+    for(var i = 4; i < 8; i++) {
+        $("td:nth-child(" + i + ")").css("font-weight","normal");
+    }
+    $("td:nth-child(" + a + ")").css("font-weight","bold");
+}
+
+//AJAX funktionalitet
+
+//data er det jeg sender, så der skal jeg finde ud af active, og left eller right. Evt. gøre så man kan trykke direkte på overskrifterne
+
+//sender her info afsted til min ajax/php fil. 'row' er et 'f', 'h', 'b' eller 'o'.
+function sort(row) {
+    $.post('ajax/sort.php', {direction: row, limit: limit}, function(data) {
+        $('div#table').html(data);
+    });
+}
+
+//Øg antallet af rows der vises
+function fiveMore(a) {
+    limit += 5;
+    maxheight += 180;
+    $.post('ajax/sort.php', {limit: limit, active: active}, function(data) {
+        $('div#table').html(data);
+    });
+    //kalder showBoard for at opdatere maxheight + vise den grønne baggrund og bold text
+    showBoard("update");
+}
+
+//Mindsk antallet af rows der vises
+function fiveFewer(a) {
+    if (limit <= 5){
+        return;
+    }
+    limit -= 5;
+    maxheight -= 180;
+    $.post('ajax/sort.php', {limit: limit, active: active}, function(data) {
+        $('div#table').html(data);
+    });
+    //kalder showBoard for at opdatere maxheight + vise den grønne baggrund og bold text
+    
+    showBoard("update");
+}
