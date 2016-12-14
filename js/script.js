@@ -78,9 +78,6 @@ $(document).ready(function () {
                 toggleScroll = 0;
             }
         }
-        console.log($(window).height());
-        console.log($(document).height());        
-        console.log($(window).scrollTop());
         //
             
         /*
@@ -104,6 +101,9 @@ var active = 4;
 var once = 1;
 var limit = 0;
 var delay = 50;
+var toggle = 1;
+var maxheight = 280;    //passer til desktop
+                        //cellestørrelse = 32px * 5 = 160px, adder 20 mere
 
 $score_f = $("#score_f");
 $score_h = $("#score_h");
@@ -115,19 +115,41 @@ function h() {
     $score_h.css("font-size", "40pt");
 }
 
-function showBoard(){
+function showBoard(a){
     if (once) {
         once = 0;
-        //balls(limit);
         fiveMore(limit);
     }
     
-    //bgColor(active);
     setTimeout(function(){
         //console.log(active);
         bgColor(active);
         fontWeight(active);
     }, delay);
+    
+    $("#showLimit").html("Rang 1 til maks " + limit);
+    
+    if (toggle) {
+        if (a == "update") {
+            $("#leaderboard").css("max-height","calc(" + maxheight + "px + 10vw)");
+            console.log("max-height","calc(" + maxheight + "px + 10vw)");
+            return;
+        }
+        toggle = !toggle;
+        $("#leaderboard").css("max-height","calc(" + maxheight + "px + 10vw)");
+        $("#downArrow").css("transform","rotate(270deg)");
+        $("#teaser").html("Tryk for at gemme pointtavlen");
+    } else {
+        if (a == "update") {
+            $("#leaderboard").css("max-height","calc(" + maxheight + "px + 10vw)");
+            console.log("max-height","calc(" + maxheight + "px + 10vw)");
+            return;
+        }
+        toggle = !toggle;
+        $("#leaderboard").css("max-height","10vw");
+        $("#downArrow").css("transform","rotate(90deg)");
+        $("#teaser").html("Tryk her for at se pointtavlen!");
+    }    
 }
 
 function lbHeadline(turn) {
@@ -276,22 +298,25 @@ function sort(row) {
 //Øg antallet af rows der vises
 function fiveMore(a) {
     limit += 5;
+    maxheight += 180;
     $.post('ajax/sort.php', {limit: limit, active: active}, function(data) {
         $('div#table').html(data);
     });
-    setTimeout(function(){
-        bgColor(active);
-        fontWeight(active);
-    }, delay);
+    //kalder showBoard for at opdatere maxheight + vise den grønne baggrund og bold text
+    showBoard("update");
 }
 
-//Øg antallet af rows der vises
-/*
-function loadMore(a) {
-    limit += 5;
-    $.post('ajax/sort.php', {limit: limit}, function(data) {
+//Mindsk antallet af rows der vises
+function fiveFewer(a) {
+    if (limit <= 5){
+        return;
+    }
+    limit -= 5;
+    maxheight -= 180;
+    $.post('ajax/sort.php', {limit: limit, active: active}, function(data) {
         $('div#table').html(data);
     });
-    console.log(limit);
+    //kalder showBoard for at opdatere maxheight + vise den grønne baggrund og bold text
+    
+    showBoard("update");
 }
-*/

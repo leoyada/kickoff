@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Aarhus Kickoff 2017</title>
+    <meta name="description" content="Aarhus Kickoff 2017">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+    <style>
+        body {
+            background: salmon;
+            color: white;
+        }
+        section {
+            position: relative;
+        }
+        
+        .dayTab {
+            display: inline-block;
+            border: 1pt solid white;
+            cursor: pointer;
+        }
+        article {
+            position: absolute;
+            top: 10;
+            display: none;
+        }
+        
+        h3{
+            display: inline-block;
+            border: 1pt solid white;
+            cursor: pointer;
+        }
+        
+        #arenaText1 {
+            display: block;
+        }
+        
+        #scenenText1 {
+            display: none;
+        }
+        
+        #pladsenText1 {
+            display: none;
+        }
+        
+        #day1 {
+            display: block;
+            background: rgba(10,10,10,1);
+            height: 400px;
+        }
+        
+        #day2 {
+            display: none;
+            background: rgba(100,100,100,1);
+            height: 400px;
+        }
+        
+        #day3 {
+            display: none;
+            background: rgba(200,200,200,1);
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="tabs">
+    <h2 class="dayTab" onclick="switchDay('1')">FREDAG</h2>
+    <h2 class="dayTab" onclick="switchDay('2')">LØRDAG</h2>
+    <h2 class="dayTab" onclick="switchDay('3')">SØNDAG</h2>
+    
+    <section id="day1">
+        <h3 class="arena" onclick="switchPlace('arena',1)">Ceres Arena</h3>
+        <h3 class="scenen" onclick="switchPlace('scenen',1)">Scenen</h3>
+        <h3 class="pladsen" onclick="switchPlace('pladsen',1)">Kickoffpladsen</h3>
+        
+        <article id="arenaText1"><h4>15:00 - 17:00</h4><p>arena fredag</p></article>
+        <article id="scenenText1"><h4>15:00 - 17:00</h4><p>scenen fredag</p></article>
+        <article id="pladsenText1"><h4>15:00 - 17:00</h4><p>kickoffpladsen fredag</p></article>
+    </section>
+    <section id="day2">
+        <h3 class="arena" onclick="switchPlace('arena', 2)">Ceres Arena</h3>
+        <h3 class="scenen" onclick="switchPlace('scenen',2)">Scenen</h3>
+        <h3 class="pladsen" onclick="switchPlace('pladsen',2)">Kickoffpladsen</h3>
+        
+        <article id="arenaText2"><h4>10:00 - 17:00</h4><p>arena lørdag</p></article>
+        <article id="scenenText2"><h4>10:00 - 17:00</h4><p>scenen lørdag</p></article>
+        <article id="pladsenText2"><h4>10:00 - 17:00</h4><p>kickoffpladsen lørdag</p></article>
+    </section>
+    <section id="day3">
+        <h3 class="arena" onclick="switchPlace('arena', 3)">Ceres Arena</h3>
+        <h3 class="scenen" onclick="switchPlace('scenen',3)">Scenen</h3>
+        <h3 class="pladsen" onclick="switchPlace('pladsen',3)">Kickoffpladsen</h3>
+        
+        <article id="arenaText3"><h4>10:00 - 17:00</h4><p>arena søndag</p></article>
+        <article id="scenenText3"><h4>10:00 - 17:00</h4><p>scenen søndag</p></article>
+        <article id="pladsenText3"><h4>10:00 - 17:00</h4><p>kickoffpladsen søndag</p></article>
+    </section>
+</div>
+    
+<script type="text/javascript">
+    var activeDay = 1;
+    function switchPlace(show,day) {
+        console.log(show);
+        console.log(day);
+        $("#arenaText" + day).css("display","none");
+        $("#scenenText" + day).css("display","none");
+        $("#pladsenText" + day).css("display","none");
+        $("#" + show + "Text" + day).css("display","block");
+        console.log("#" + show + "Text" + day);
+        event.stopPropagation();
+    }
+    
+    function switchDay(day){
+        console.log(day);
+        switchPlace("arena",day);
+        $("#day1").css("display","none");
+        $("#day2").css("display","none");
+        $("#day3").css("display","none");
+        $("#day" + day).css("display","block");
+        //$("#arenaText" + day).css("display","block");
+        console.log("#arenaText" + day);
+    }
+    
+
+</script>
+
+</body>
+
+</html>
