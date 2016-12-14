@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="da">
 
 <head>
-
+   
     <meta charset="utf-8">
-    <title>Aarhus Kickoff 2017</title>
-    <meta name="description" content="Aarhus Kickoff 2017">
+    <title>Aarhus Kickoff 2017 - spark hyggen i gang</title>
+    <meta name="description" content="Aarhus Kickoff 2017 - spark hyggen i gang med et nyt og spændende event for hele familien med sportslige undertoner">
+    <meta name="author" content="aarhus kickoff 2017, aarhus, kickoff, 2017, hygge, familie, samvær, event, sport, gratis, aktivitet, udendørs, agf, bakken bears, sk aarhus, århus håndbold, nrgi arena, stadion alle, ceres park">
+    <meta name="robots" content="noindex, nofollow, nosnippet">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-    <!-- Jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
+    
+    <!-- Socialfeed Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-feed/0.1.2/css/jquery.socialfeed.min.css">
+    
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    
     <!-- Reset.css -->
-    <LINK REL=StyleSheet HREF="css/reset.css" TYPE="text/css">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
 
     <!-- Stylesheet -->
-    <LINK REL=StyleSheet HREF="css/style.css" TYPE="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -41,7 +46,7 @@
 <body>
 
     <header>
-        <!-- slet den tossede navbar, den har ingen relevans? -->
+        <!-- Navbar -->
         <div id="navbar">
             <ul>
                 <li><a href="#row1">Info</a></li>
@@ -64,23 +69,29 @@
         </div>
     </header>
 
-    <div id="container">
+    <main id="container">
+       
         <div id="video">
             <h1>Aarhus Kickoff</h1>
             <p>Familietid, natur, vennetid, god mad & <span>hygge</span> -
                 <br><span>ALT sammen i sportslige omgivelser</span></p>
             <div id="play">
-                <p>Play!</p><img src="images/play-22.svg"></div>
-
+                <p>Play!</p><img src="images/play-22.svg">
+            </div>
+            <video id="videoplayer" loop>
+                <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm">
+            </video>
         </div>
-        <div id="row1">
-            <div id="boks1" class="boksSmall">
+        
+        <section id="row1">
+            <article id="boks1" class="boksSmall">
                 <div class="overlaySmall">
                     <h2 class="sectionheading">Info</h2>
                     <p class="sectiontext">Aarhus Kickoff 2017 er et weekend event i august for hele familien Tryk her for at læse mere.</p>
                 </div>
-            </div>
-            <div id="boks2" class="boksBig">
+            </article>
+            
+            <article id="boks2" class="boksBig">
                 <div class="overlayBig">
                     <h2 class="sectionheading">Countdown</h2>
                     <div id="clockdiv">
@@ -108,48 +119,242 @@
                          -->
                     </div>
                 </div>
-            </div>
-        </div>
-        <div id="row2">
-            <div id="boks3" class="boksBig">
+            </article>
+            
+        </section>
+        
+        <section id="row2">
+           
+            <article id="boks3" class="boksBig">
                 <div class="overlayBig">
                     <h2 class="sectionheading">Program</h2>
                     <p class="sectiontext">Her kan du finde en oversigt over hvad der sker til begivenheden. Tryk her for at se mere.</p>
                 </div>
-            </div>
-            <div id="boks4" class="boksSmall">
+            </article>
+            
+            <article id="boks4" class="boksSmall">
                 <div class="overlaySmall">
                     <h2 class="sectionheading">Mad</h2>
                     <p class="sectiontext">Der til vil Aarhus Kickoff være et bredt udvalg af madboder. Maden bliver leveret i samarbejde med vores sponsore. Tryk her for at læse mere.</p>
                 </div>
-            </div>
-        </div>
-        <div id="row3">
-            <div id="boks5" class="boksSmall">
+            </article>
+            
+        </section>
+        
+        <section id="row3">
+           
+            <article id="boks5" class="boksSmall">
                 <div class="overlaySmall">
                     <h2 class="sectionheading">Partnere</h2>
                     <p class="sectiontext">Til Aarhus Kickoff vil der være mulighed for at udvide dit netværk Her kan du se hvilke partnere vi arbejder sammen med.</p>
                 </div>
-            </div>
-            <div id="boks6" class="boksBig">
+            </article>
+            
+            <article id="boks6" class="boksBig">
                 <div class="overlayBig">
                     <h2 class="sectionheading">Kickoff Cup 2017</h2>
                     <p class="sectiontext">Aarhus Kickoff er vært for semifinalerne og finalen i Kickoff Cup 2017.</p>
                 </div>
-            </div>
-        </div>
-        <div id="socialfeed">
-            <h2>Følg os</h2>
-        </div>
+            </article>
+            
+        </section>
+        
+        <section id="socialfeed">
+            <h2 class="sectionheading">Følg Med</h2>
+            
+            <article class="social-box box" id="social">
+               
+                <div class="social-feed-container"></div>
+                
+            </article>
 
-        <div id="modal">
-            <img src="images/modal_kryds.svg" id="kryds">
-            <div id="modalCont">
-                <p class="modalText">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            </div>
-        </div>
+        </section>
 
-    </div>
+        <section id="info-modal" class="modal">
+            <h2 class="modal-header">Info</h2>   
+            <img src="images/modal_kryds.svg" class="kryds">
+            <article class="modalCont">
+               
+                <div class="modal-col">
+                    <h5>Hvad er Aarhus Kickoff 2017?</h5>
+                    <p>Aarhus Kickoff er et nyt og spændende event i forbindelse med <a href="http://www.aarhus2017.dk/da/" target="_blank">Aarhus 2017 - Europæisk Kulturhovedstad</a>, som ligger fokus på hyggelige rammer for hele familien med sportslige undertoner. Aarhus Kickoff 2017 finder sted fra den 18. - 20. august, så kom ned til Aarhus Kickoff 2017 og spark hyggen i gang!</p>
+                    <br>
+                    <h5>Hvad kan du lave her?</h5>
+                    <p>Til Aarhus Kickoff 2017 har du og familien rig mulighed for at deltage i diverse konkurrencer, se topproffesionelle kampe i sportsgrenene håndbold, fodbold og basket, møde dine idoler til vores Meet &amp; Greet, deltage i vores Kickoff Cup 2017 med dine holdkammerater, stille sulten med vores brede udvalg af madboder og meget mere.
+                    </p>
+                </div>
+                
+                <div class="modal-col">
+                    <h5>Hvor finder du os?</h5>
+                    <p>Aarhus Kickoff 2017 er lokaliseret på Aarhus hjemmebane også kendt som Stadion Allé 70, 8000, Aarhus C.
+                        <br>
+                        <br>
+                        <a href="https://goo.gl/maps/dTqedGKztwK2" target="_blank">Se på google maps</a>
+                    </p>
+
+                    <br>
+                    <h5>Kontakt</h5>
+                    <p>Aarhus Kickoff 2017 kan kontaktes på <a href="mailto:kontakt@aarhuskickoff.dk">e-mail</a>.
+                        <br> Der kan gå op til 2-3 hverdage før svar modtages.
+                    </p>
+                </div>
+                
+            </article>
+            
+        </section>
+        
+        <section id="program-modal" class="modal">
+            <h2 class="modal-header">Program</h2>
+            <img src="images/modal_kryds.svg" class="kryds">
+            <article class="modalCont">
+               
+                <div id="tabs">
+                    <h2 class="dayTab" id="dayTab1" onclick="switchDay('1')">FREDAG</h2>
+                    <h2 class="dayTab" id="dayTab2" onclick="switchDay('2')">LØRDAG</h2>
+                    <h2 class="dayTab" id="dayTab3" onclick="switchDay('3')">SØNDAG</h2>
+
+                    <section id="day1">
+                        <h3 class="arena" onclick="switchPlace('arena',1)">Ceres Arena</h3>
+                        <h3 class="park" onclick="switchPlace('park',1)">Ceres Park</h3>
+                        <h3 class="pladsen" onclick="switchPlace('pladsen',1)">Kickoffpladsen</h3>
+
+                        <article id="arenaText1" class="arena-bg">
+                            <h4>15:00 - 17:00</h4><p>Meet'n'greet med Bakken Bears</p>
+                            <h4>18:30 - 20:30</h4><p>Bakken Bears vs. Hornsens Rabbits</p>
+                        </article>
+                        <article id="parkText1" class="park-bg">
+                            <h4>12:00</h4><p>Der bydes velkommen til Aarhus Kickoff 2017 af Aarhus borgmester - Jacob Bundsgaard</p>
+                            <h4>17:00 - 17:30</h4><p>The Burger Schack præsentere "The Burger Schack Challenge" - hvem kan spise flest burgere på 15 minutter?</p>
+                        </article>
+                        <article id="pladsenText1" class="pladsen-bg">
+                            <h4>12:15 - 14:30</h4><p>Mål mål mål! Runde 1</p>
+                            <h4>14:45 - 15:00</h4><p>Prisuddeling for Mål mål mål! Runde 1</p>
+                            <h4>15:00 - 17:30</h4><p>Mål mål mål! Runde 2</p>
+                            <h4>17:45 - 18:00</h4><p>Prisuddeling for Mål mål mål! Runde 2</p>
+                        </article>
+                        
+                    </section>
+                    
+                    <section id="day2">
+                        <h3 class="arena" onclick="switchPlace('arena', 2)">Ceres Arena</h3>
+                        <h3 class="park" onclick="switchPlace('park',2)">Ceres Park</h3>
+                        <h3 class="pladsen" onclick="switchPlace('pladsen',2)">Kickoffpladsen</h3>
+
+                        <article id="arenaText2" class="arena-bg">
+                            <h4>14:00 - 15:00</h4><p>Meet 'n' Greet med SK Aarhus</p>
+                            <h4>16:00 - 17:00</h4><p>SK Aarhus vs. </p>
+                        </article>
+                        <article id="parkText2" class="park-bg">
+                            <h4>10:00 - 12:00</h4><p></p>
+                            <h4>12:30 - 13:30</h4><p>Meet 'n' Greet med AGF</p>
+                            <h4>15:00 - 17:00</h4><p>AGF vs. FCM</p>
+                        </article>
+                        <article id="pladsenText2" class="pladsen-bg">
+                           <h4>13:00 - 15:00</h4><p>Bordfodbolds turnering</p>
+                            <h4>16:00 - 17:00</h4><p></p>
+                            <h4>19:00 - 21:00</h4><p>"Giv klubberne et high-five" - sæt dit præg med fingermaling!</p>
+                        </article>
+                        
+                    </section>
+                    
+                    <section id="day3">
+                        <h3 class="arena" onclick="switchPlace('arena', 3)">Ceres Arena</h3>
+                        <h3 class="park" onclick="switchPlace('park',3)">Ceres Park</h3>
+                        <h3 class="pladsen" onclick="switchPlace('pladsen',3)">Kickoffpladsen</h3>
+
+                        <article id="arenaText3" class="arena-bg">
+                           <h4>10:00 - 12:00</h4><p>Meet 'n' Greet med Århus Håndbold</p>
+                            <h4>15:00 - 17:00</h4><p>Århus Håndbold vs. BSV</p>
+                            <h4>10:00 - 17:00</h4><p>arena søndag</p>
+                        </article>
+                        <article id="parkText3" class="park-bg">
+                            <h4>10:00 - 17:00</h4><p></p>
+                            <h4>10:00 - 17:00</h4><p>park søndag</p>
+                            <h4>10:00 - 17:00</h4><p>park søndag</p>
+                        </article>
+                        <article id="pladsenText3" class="pladsen-bg">
+                            <h4>10:00 - 12:00</h4><p>Sækkeløb</p>
+                            <h4>14:00 - 15:00</h4><p></p>
+                            <h4>10:00 - 17:00</h4><p>kickoffpladsen søndag</p>
+                        </article>
+                        
+                    </section>
+                    
+                </div>
+                
+            </article>
+            
+        </section>
+        
+        <section id="mad-modal" class="modal">
+            <h2 class="modal-header">Maden</h2>   
+            <img src="images/modal_kryds.svg" class="kryds">
+            <article class="modalCont">
+               
+                <div class="modal-col">
+                    <h5>Hvad for noget mad kan du få til Aarhus Kickoff 2017?</h5>
+                    <p>Aarhus Kickoff 2017 får leveret mad af Kødbyens Mad og Marked og The Burger Schack.
+                        <br>
+                        <br> Kødbyens Mad og Marked levere lækre råvarer og mad til den danske forbruger til fornuftige priser gennem deres kendte foodmarkets.
+                        <br> The Burger Schack udskiller sig på det danske "fastfood-marked" ved at lave burgere med ekstraordinær kvalitet.
+                        <br>
+                        <br> Tryk på navnet for at læse mere om <a href="http://koedbyensmadogmarked.dk/om-markedet/" target="_blank">Kødbyens Mad og Marked</a> og <a href="http://theburgershack.dk/aarhus/" target="_blank">The Burger Schack</a>.</p>
+                </div>
+                
+                <div class="modal-col">
+                    <img alt="mad-billede" src="images/food.jpg">
+                </div>
+                
+            </article>
+            
+        </section>
+        
+        <section id="partner-modal" class="modal">
+            <h2 class="modal-header">Vores partnere</h2>   
+            <img src="images/modal_kryds.svg" class="kryds">
+            <article class="modalCont">
+               
+                <div class="modal-col">
+                    <h5>Hvilke partnere samarbejder Aarhus Kickoff 2017 med?</h5>
+                    <p>Aarhus Kickoff 2017 samarbejder bl.a. med Hummel, Spot Festival, Kødbyens Mad og Marked og mange flere.
+                        <br> Uden vores partnere ville Aarhus Kickoff 2017 ikke være en relatiet, derfor vil vi selvfølgelig sige mange gange tak.
+                        <br>
+                        <br> Se udvalgte partnere nedenunder.</p>
+                        
+                        <a target="_blank" href="http://www.hummel.net/DK/"><img alt="hummel-logo" src="images/hummel-logo.png"></a>
+                        <a target="_blank" href="https://spotfestival.dk/"><img alt="spot-logo" src="images/spot-logo.png"></a>
+                        <a target="_blank" href="http://www.proshopeurope.com/"><img alt="proshop-logo" src="images/proshop-logo.png"></a>
+                        <a target="_blank" href="http://koedbyensmadogmarked.dk/"><img alt="kødbyen-logo" src="images/kodbyen-logo.png"></a>
+                </div>
+                
+           
+                
+            </article>
+            
+        </section>
+        
+        <section id="cup-modal" class="modal">
+            <h2 class="modal-header">Aarhus Kickoff Cup 2017</h2>   
+            <img src="images/modal_kryds.svg" class="kryds">
+            <article class="modalCont">
+               
+                <div class="modal-col">
+                    <h5>Kickoff Cup 2017</h5>
+                    <p>Aarhus Kickoff Cup 2017 løber af stablen den samme weekend som Aarhus Kickoff 2017.
+                        <br> Dog grundet manglende tilbagemelding fra samarbejdsklubberne, er en dato ikke blevet fastlagt endnu.
+                        <br>
+                        <br> Ydeligere udmelding finder sted her på siden og via sociale medier, så bliv hængende!</p>
+                    </div>
+                
+                <div class="modal-col">
+                    <img alt="mad-billede" src="images/trophy.jpeg">
+                </div>
+                
+            </article>
+            
+        </section>
+
+    </main>
 
     <footer>
         <section>
@@ -168,18 +373,102 @@
                     <img src="images/mail_white.svg">
                     <p>kontakt@aarhuskickoff.dk</p>
                 </div>
-                
+
             </article>
 
             <article class="footer-right">
-                <a href="#"><img src="images/facebook_white.svg"></a>
-                <a href="#"><img src="images/facebook_white.svg"></a>
-                <a href="#"><img src="images/facebook_white.svg"></a>
+                <a class="align-bottom" target="_blank" href="https://www.facebook.com/aarhuskickoff2017"><img src="images/facebook_white.svg"></a>
+                <a class="align-bottom" target="_blank" href="https://twitter.com/aarhuskickoff"><img src="images/twitter_white.svg"></a>
+                <a class="align-bottom" target="_blank" href="https://www.instagram.com/aarhuskickoff/"><img src="images/insta_white.svg"></a>
+                   <a class="align-bottom" id="arrowtop" href="#container"><img src="images/modal_pil-10.svg"></a>
             </article>
 
         </section>
 
     </footer>
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/locale/da.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dot/1.1.0/doT.min.js"></script>
+    <script src="js/codebird.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-feed/0.1.2/js/jquery.socialfeed.min.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            socialFeed();
+        });
+        //$(document).ready(function () {
+        function socialFeed() {
+            $('.social-feed-container').socialfeed({
+
+                // Facebook
+                facebook: {
+                    accounts: ['@aarhuskickoff2017'], //Array: Specify a list of accounts from which to pull wall posts
+                    limit: feedlimit, //Integer: max number of posts to load
+                    access_token: '250741511643378|S4JeWWSaNjr0VAbmLvIJbY_iO7g' //String: "APP_ID|APP_SECRET" - access token from facebook developer site app permission
+                }, // Twitter
+                twitter: {
+                    accounts: ['@aarhuskickoff'], //Array: Specify a list of accounts from which to pull tweets
+                    limit: feedlimit, //Integer: max number of tweets to load
+                    consumer_key: 'ZrmFtu8rAYFISGES9OuEZ69bw', //String: consumer key. make sure to have your app read-only
+                    consumer_secret: '6JZFI9OjKDnKhW9aLqoKOyAnf0HTZsFs617CozQ4qyxnWZTDGv' //String: consumer secret key. make sure to have your app read-only
+                },
+
+
+
+
+
+
+
+
+                // GENERAL SETTINGS
+
+                // GENERAL SETTINGS
+                //Integer: For posts with text longer than this length, show an ellipsis.
+                show_media: true, //Boolean: if false, doesn't display any post images
+                update_period: 10000
+                , template: "template.html"
+                , date_format: "MMMM Do YYYY, h:mm:ss a", //String: Display format of the date attribute (see http://momentjs.com/docs/#/displaying/format/)
+                date_locale: "da", //String: The locale of the date (see: http://momentjs.com/docs/#/i18n/changing-locale/)
+                moderation: function (content) { //Function: if returns false, template will have class hidden
+                    return (content.text) ? content.text.indexOf('fuck') == -1 : true;
+                }
+                , callback: function () { //Function: This is a callback function which is evoked when all the posts are collected and displayed
+                    console.log("All posts collected!");
+                }
+
+            });
+        //});
+        }
+        
+    var feedlimit = 4;
+        
+    $( window ).resize(function() {
+      console.log ($(window).width());
+        if ($(window).width() <= 980){
+            if (feedlimit != 2) {
+                feedlimit = 2;
+                socialFeed();
+            }
+            
+        } else {
+            if (feedlimit != 4) {
+                feedlimit = 4;
+                socialFeed(); 
+            }
+        }
+        if ($(window).width() <= 768){
+            if (feedlimit != 1) {
+                feedlimit = 1;
+                console.log(feedlimit);
+                socialFeed();
+            }
+        }
+    });
+        
+    </script>
 
     <!-- Javascript -->
     <script src="js/script.js" type="text/javascript"></script>

@@ -4,18 +4,58 @@ var toggleScroll = 0;
         
 $("#boks1").click(function() {
     console.log("a");
-    $("#modal").css("opacity", "1");
-    $("#modal").css("visibility", "visible");
+    $("#info-modal").css("opacity", "1");
+    $("#info-modal").css("visibility", "visible");
 
 });
 
-$("#modal").click(function() {
+$("#boks3").click(function() {
+    console.log("x");
+    $("#program-modal").css("opacity", "1");
+    $("#program-modal").css("visibility", "visible");
+
+});
+
+$("#boks4").click(function() {
+    console.log("x");
+    $("#mad-modal").css("opacity", "1");
+    $("#mad-modal").css("visibility", "visible");
+
+});
+
+$("#boks5").click(function() {
+    console.log("x");
+    $("#partner-modal").css("opacity", "1");
+    $("#partner-modal").css("visibility", "visible");
+
+});
+
+$("#boks6").click(function() {
+    console.log("x");
+    $("#cup-modal").css("opacity", "1");
+    $("#cup-modal").css("visibility", "visible");
+
+});
+
+$(".modal").click(function() {
     console.log("b");
-    $("#modal").css("opacity", "0");
-    $("#modal").css("visibility", "hidden");
+    $("#info-modal").css("opacity", "0");
+    $("#info-modal").css("visibility", "hidden");
+    
+    $("#program-modal").css("opacity", "0");
+    $("#program-modal").css("visibility", "hidden");
+    
+    $("#mad-modal").css("opacity", "0");
+    $("#mad-modal").css("visibility", "hidden");
+    
+    $("#partner-modal").css("opacity", "0");
+    $("#partner-modal").css("visibility", "hidden");
+    
+    $("#cup-modal").css("opacity", "0");
+    $("#cup-modal").css("visibility", "hidden");
 });
 
-$("#modalCont").click(function(event) {
+$(".modalCont").click(function(event) {
     console.log("c");
     event.stopPropagation();
 });
@@ -161,3 +201,40 @@ function initializeClock(id, endtime) {
 
 var deadline = new Date("2017-08-18T18:00:00");
 initializeClock('clockdiv', deadline);
+
+
+//Play knap
+
+$('#play').click(function(){
+    $('#videoplayer')[0].play();
+});
+
+// Tabs
+
+var activeDay = 1;
+
+function switchPlace(show, day) {
+    console.log(show);
+    console.log(day);
+    $("#arenaText" + day).css("display", "none");
+    $("#parkText" + day).css("display", "none");
+    $("#pladsenText" + day).css("display", "none");
+    $("#" + show + "Text" + day).css("display", "block");
+    console.log("#" + show + "Text" + day);
+    event.stopPropagation();
+}
+
+function switchDay(day) {
+    console.log(day);
+    switchPlace("arena", day);
+    $("#day1").css("display", "none");
+    $("#day2").css("display", "none");
+    $("#day3").css("display", "none");
+    $("#dayTab1").css("text-decoration", "none");
+    $("#dayTab2").css("text-decoration", "none");
+    $("#dayTab3").css("text-decoration", "none");
+    $("#day" + day).css("display", "block");
+    $("#dayTab" + day).css("text-decoration", "underline");
+    //$("#arenaText" + day).css("display","block");
+    console.log("#arenaText" + day);
+}

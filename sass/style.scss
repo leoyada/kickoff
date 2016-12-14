@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
 @import url(https://fonts.googleapis.com/css?family=Abel);
 
-
 /* ======================================================
    @extends
    ====================================================== */
@@ -17,6 +16,7 @@
     clip-path: polygon(0 3vw, 100% 0%, 100% 100%, 0% 100%);
 }
 
+
 /* ======================================================
    Variables
    ====================================================== */
@@ -27,24 +27,22 @@ $darkblue: #003b60;
 $red: #d35540;
 $orange: #ef661c;
 $lightblue: #42b4e6;
-
 $opacity: 0.8;
 $lessopacity: 0.2;
-$greenO: rgba(80, 135, 73, $opacity);
-$greenI: rgba(80, 135, 73, $lessopacity);
-$yellowO: rgba(233, 209, 95, $opacity);
-$yellowI: rgba(233, 209, 95, $lessopacity);
-$darkblueO: rgba(0, 59, 96, $opacity);
-$darkblueI: rgba(0, 59, 96, $lessopacity);
-$redO: rgba(211, 85, 64, $opacity);
-$redI: rgba(211, 85, 64, $lessopacity);
-$orangeO: rgba(239, 102, 28, $opacity);
-$orangeI: rgba(239, 102, 28, $lessopacity);
-$lightblueO: rgba(66, 180, 230, $opacity);
-$lightblueI: rgba(66, 180, 230, $lessopacity);
-$blackO: rgba(0, 0, 0, $opacity);
-$blackI: rgba(0, 0, 0, $lessopacity);
-
+$greenO: rgba(80,135,73,$opacity);
+$greenI: rgba(80,135,73,$lessopacity);
+$yellowO: rgba(233,209,95,$opacity);
+$yellowI: rgba(233,209,95,$lessopacity);
+$darkblueO: rgba(0,59,96,$opacity);
+$darkblueI: rgba(0,59,96,$lessopacity);
+$redO: rgba(211,85,64,$opacity);
+$redI: rgba(211,85,64,$lessopacity);
+$orangeO: rgba(239,102,28,$opacity);
+$orangeI: rgba(239,102,28,$lessopacity);
+$lightblueO: rgba(66,180,230,$opacity);
+$lightblueI: rgba(66,180,230,$lessopacity);
+$blackO: rgba(0,0,0,$opacity);
+$blackI: rgba(0,0,0,$lessopacity);
 
 /* ======================================================
    Style
@@ -57,6 +55,7 @@ body {
     width: 100%;
     font-family: 'Open Sans', sans-serif;
 }
+
 
 /* //skrå navbar
 #navbar {
@@ -84,7 +83,6 @@ body {
 */
 
 #navbar {
-    
     ul {
         position: absolute;
         z-index: 11;
@@ -93,7 +91,6 @@ body {
         width: 70%;
         left: 15%;
         text-align: right;
-        
         li {
             display: inline-block;
             //padding: 0 1.7vw 0 0;
@@ -104,11 +101,9 @@ body {
             font-weight: 500;
             font-size: 12pt;
             text-transform: uppercase;
-            
             a {
                 text-decoration: none;
                 color: white;
-                
                 &:hover:nth-child(1) {
                     color: lightblue;
                 }
@@ -125,14 +120,12 @@ body {
     left: 15%;
     margin: 0 0 0 0;
     text-align: left;
-    
     #logo {
         height: 11vw;
         background: #303030;
         padding: 20px;
         transition: margin-top 0.5s;
     }
-    
     #hideTopLogo {
         position: absolute;
         width: 1.5vw;
@@ -149,11 +142,9 @@ body {
     height: 18vw;
     position: fixed;
     z-index: 12;
-    
     top: 50%;
     margin-top: -9vw;
     text-align: center;
-    
     div {
         width: 100%;
         height: 100%;
@@ -162,7 +153,6 @@ body {
         transition: margin-left 0.3s;
         padding: 7px 3px 5px 0px;
     }
-    
     #hideSideLogo {
         width: 1.5vw;
         margin: 2vw 0 0 0;
@@ -193,7 +183,6 @@ body {
     background-size: cover;
     text-align: right;
     transition: opacity 0.5s;
-    
     h1 {
         position: relative;
         top: 33%;
@@ -205,9 +194,9 @@ body {
         font-family: 'Cabin Sketch', cursive;
         font-weight: 700;
         color: white;
+        z-index: 1;
     }
-    
-    p { 
+    p {
         position: relative;
         top: 33%;
         width: 70%;
@@ -217,13 +206,12 @@ body {
         font-size: 1vw;
         color: white;
         padding: 0;
-        
+        z-index: 1;
         span:first-of-type {
             text-transform: uppercase;
             font-weight: 800;
         }
     }
-    
     #play {
         width: 220px;
         position: relative;
@@ -233,12 +221,11 @@ body {
         top: 30%;
         margin-left: -110px;
         transition: top 0.2s;
-        
+        z-index: 1;
         &:hover {
             cursor: pointer;
             top: 29%;
         }
-        
         p {
             display: inline-block;
             font-size: 40pt;
@@ -252,14 +239,19 @@ body {
             padding: 0 20px 0 0;
             left: 0;
         }
-        
         img {
             height: 80px;
             display: inline-block;
         }
     }
+    video {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
 }
-
 
 #row1 {
     width: 100%;
@@ -270,7 +262,6 @@ body {
         background-image: url(../images/family_ball.jpg);
         background-position: 0% 30%;
         min-height: 40vh;
-        
         div {
             background: $darkblueO;
             &:hover {
@@ -280,7 +271,6 @@ body {
     }
     #boks2 {
         background-image: url(../images/bg-chalkboard.jpg);
-        
         div {
             cursor: default;
         }
@@ -293,11 +283,9 @@ body {
     @extend .skewDownLeft;
     margin-top: -3vw;
     display: flex;
-    
     #boks3 {
         background-image: url(../images/field.jpg);
         min-height: 40vh;
-        
         div {
             background: $orangeO;
             &:hover {
@@ -308,7 +296,6 @@ body {
     #boks4 {
         background-image: url(../images/food.jpg);
         background-position: 0% 35%;
-        
         div {
             background: $greenO;
             &:hover {
@@ -325,12 +312,10 @@ body {
     margin-top: -3vw;
     display: flex;
     z-index: 5;
-    
     #boks5 {
         background-image: url(../images/partner_thumb.jpg);
         background-position: 0% 30%;
         min-height: 40vh;
-        
         div {
             background: $lightblueO;
             &:hover {
@@ -341,7 +326,6 @@ body {
     #boks6 {
         background-image: url(../images/kids_sport.jpg);
         background-position: 0% 35%;
-        
         div {
             background: $redO;
             &:hover {
@@ -353,7 +337,8 @@ body {
 
 .boksBig {
     z-index: -2;
-    -webkit-flex-direction: row; /* Safari */
+    -webkit-flex-direction: row;
+    /* Safari */
     flex-direction: row;
     vertical-align: top;
     display: flex;
@@ -368,7 +353,8 @@ body {
 .boksSmall {
     z-index: -2;
     display: flex;
-    -webkit-flex-direction: row; /* Safari */
+    -webkit-flex-direction: row;
+    /* Safari */
     flex-direction: row;
     vertical-align: top;
     top: 0;
@@ -390,12 +376,12 @@ body {
     font-size: 1.2em;
     width: 20vw;
     //padding: 6vw 2vw 6vw 2vw;
-
 }
 
-.overlayBig { 
+.overlayBig {
     z-index: -1;
-    -webkit-flex-direction: row; /* Safari */
+    -webkit-flex-direction: row;
+    /* Safari */
     flex-direction: row;
     vertical-align: top;
     width: 100%;
@@ -406,9 +392,10 @@ body {
     cursor: pointer;
 }
 
-.overlaySmall { 
+.overlaySmall {
     z-index: -1;
-    -webkit-flex-direction: row; /* Safari */
+    -webkit-flex-direction: row;
+    /* Safari */
     flex-direction: row;
     vertical-align: top;
     width: 100%;
@@ -418,12 +405,13 @@ body {
     transition: background-color 0.8s;
     cursor: pointer;
 }
+
 
 /* ======================================================
    Countdown
    ====================================================== */
 
-#clockdiv{
+#clockdiv {
     height: 100px;
     width: 100%;
     color: #fff;
@@ -432,37 +420,37 @@ body {
     font-size: 0px;
 }
 
-#clockdiv > div{
+#clockdiv > div {
     display: inline-block;
     margin: 10px 10px 10px 10px;
     padding: 0;
     text-align: center;
 }
 
-#clockdiv div > span{
+#clockdiv div > span {
     display: inline-block;
     font-size: 50px;
     text-align: left;
     font-weight: 700;
 }
 
-.smalltext{
+.smalltext {
     font-size: 16px;
     text-align: center;
 }
+
 
 /* ======================================================
    Social Feed
    ====================================================== */
 
 #socialfeed {
-    height: 80vh;
     width: 100%;
-    background: lightblue;
+    background: $darkblue;
     @extend .skewDownLeft;
     margin-top: -3vw;
-    
-        h2 {
+    padding-bottom: 6em;
+    h2 {
         text-align: center;
         margin: 0;
         padding: 6vw 0 0 0;
@@ -471,25 +459,70 @@ body {
         font-weight: 700;
         color: white;
     }
+    article {
+        .social-feed-container {
+            display: flex !important;
+            /* Then we define the flow direction and if we allow the items to wrap 
+           * Remember this is the same as:
+           * flex-direction: row;
+           * flex-wrap: wrap;
+           */
+            flex-flow: row wrap;
+            /* Then we define how is distributed the remaining space */
+            justify-content: center;
+            margin-top: 2em;
+            width: 100%;
+            .social-feed-element {
+                margin: 1em;
+                height: auto;
+                box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1) !important;
+                width: 20%;
+                #socialfeedcontent {
+                    background-color: white !important;
+                    .media-body {
+                        width: auto;
+                        height: auto;
+                        #socialfeedicons {
+                            color: black;
+                        }
+                        .author-title {
+                            font-size: 0.9em !important;
+                        }
+                        #timeagotext {
+                            float: left !important;
+                            font-size: 0.8em;
+                        }
+                        .social-feed-text {
+                            color: black;
+                        }
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
+
 
 /* ======================================================
    Modal
    ====================================================== */
 
-#modal {
+.modal {
     position: fixed;
     z-index: 99;
     height: 100%;
     width: 100%;
     top: 0;
-    background-color: rgba(0,0,0,0.85);
+    background-color: rgba(0, 0, 0, 0.85);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s;
 }
 
-#modalCont {
+.modalCont {
     position: relative;
     z-index: 6;
     width: 60%;
@@ -497,22 +530,335 @@ body {
     top: 20%;
 }
 
-#kryds {
+.kryds {
     width: 40px;
     position: absolute;
     top: 14%;
     left: 81%;
 }
 
-#kryds:hover {
+.modal-header {
+    position: absolute;
+    top: 10%;
+    font-size: 5em;
+    font-family: 'Cabin Sketch', cursive;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.kryds:hover {
     cursor: pointer;
 }
 
 .modalText {
-    background-image: url(../images/modal-04.svg);
     box-sizing: border-box;
     padding: 4vw;
+    color: white;
 }
+
+#info-modal {
+    .modalCont {
+        display: flex;
+        color: white;
+        padding: 1.5em;
+        background-image: url(../images/modal_blue-06.svg);
+    }
+    
+    .modal-col {
+        width: 50%;
+        padding: 1em;
+        
+        h5 {
+            font-size: 1.7em;
+            font-family: 'Cabin Sketch', cursive;
+            font-weight: 700;
+            padding-bottom: 0.5em;
+        }
+        
+        p {
+            font-size: 1em;
+            line-height: 1.5em;
+            
+            a {
+                color: white;
+                font-weight: 700;
+                &:hover {
+                    color: $lightblueO;
+                }
+            }
+        }
+    }
+}
+
+#mad-modal {
+    .modalCont {
+        display: flex;
+        color: white;
+        padding: 1.5em;
+        background-image: url(../images/modal_green-05.svg);
+    }
+    
+    .modal-col {
+        width: 50%;
+        padding: 1em;
+        
+        h5 {
+            font-size: 1.7em;
+            font-family: 'Cabin Sketch', cursive;
+            font-weight: 700;
+            padding-bottom: 0.5em;
+        }
+        
+        p {
+            font-size: 1em;
+            line-height: 1.5em;
+            
+            a {
+                color: white;
+                font-weight: 700;
+                &:hover {
+                    color: $lightblueO;
+                }
+            }
+        }
+        
+        img {
+            width:100%;
+        }
+    }
+}
+
+#partner-modal {
+    .modalCont {
+        display: flex;
+        color: white;
+        padding: 1.5em;
+        background-image: url(../images/modal_lightblue-11.svg);
+    }
+    
+    .modal-col {
+        width: 100%;
+        padding: 1em;
+        text-align: center;
+        
+        h5 {
+            font-size: 1.7em;
+            font-family: 'Cabin Sketch', cursive;
+            font-weight: 700;
+            padding-bottom: 0.5em;
+            text-align: left;
+        }
+        
+        p {
+            font-size: 1em;
+            line-height: 1.5em;
+            text-align: left;
+            
+            a {
+                color: white;
+                font-weight: 700;
+                &:hover {
+                    color: $lightblueO;
+                }
+            }
+        }
+        
+        img {
+            margin-top: 4%;
+            width:15%;
+            margin-right: 4%;
+            align-items: center;
+        }
+    }
+}
+
+#cup-modal {
+    .modalCont {
+        display: flex;
+        color: white;
+        padding: 1.5em;
+        background-image: url(../images/modal_red-08.svg);
+        text-align: right;
+    }
+    
+    .modal-col {
+        width: 50%;
+        padding: 1em;
+        
+        h5 {
+            font-size: 1.7em;
+            font-family: 'Cabin Sketch', cursive;
+            font-weight: 700;
+            padding-bottom: 0.5em;
+            text-align: left;
+        }
+        
+        p {
+            font-size: 1em;
+            line-height: 1.5em;
+            text-align: left;
+        }
+        
+        img {
+            width:60%;
+        }
+    }
+}
+
+#program-modal {
+    #tabs {
+        background-image: url(../images/modal_orange-04.svg);
+    }
+}
+
+/* ======================================================
+   Program Modal
+   ====================================================== */
+
+#tabs {
+    color: white;
+    text-align: center;
+    padding-bottom: 5%;
+    
+    .dayTab {
+        display: inline-block;
+        cursor: pointer;
+    }
+    
+    #dayTab1 {
+        text-decoration: underline;
+    }
+
+    article {
+        position: relative;
+        top: 10px;
+        display: none;
+    }
+    
+    h2 {
+        font-size: 2em;
+        font-family: 'Cabin Sketch', cursive;
+        padding: 1em;
+    }
+    
+    h3 {
+        width: 33%;
+        font-size: 1.5em;
+        font-family: 'Cabin Sketch', cursive;
+        display: inline-block;
+        cursor: pointer;
+        padding: 0px;
+        margin: 0px;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+    
+    h4 {
+        font-family: 'Cabin Sketch', cursive;
+        font-size: 2em;
+        text-align: left;
+    }
+    
+    p {
+        text-align: left;
+        font-size: 1em;
+        padding-bottom: 2em;
+        padding-top: 1em;
+    }
+    
+    #day1 {
+        display: block;
+        min-height: 400px;
+        width: 80%;
+        margin: auto;
+        
+        #arenaText1 {
+            display: block;
+        }
+        
+        #parkText1 {
+            display: none;
+        }
+        
+        #pladsenText1 {
+            display: none;
+        }
+        
+        article {
+            width: 85%;
+            margin: auto;
+        }
+    }
+
+    #day2 {
+        display: none;
+        min-height: 400px;
+        width: 80%;
+        margin: auto;
+        
+        article {
+            width: 85%;
+            margin: auto;
+        }
+    }
+
+    #day3 {
+        display: none;
+        min-height: 400px;
+        width: 80%;
+        margin: auto;
+        
+        article {
+            width: 85%;
+            margin: auto;
+        }
+    }
+    
+    .arena {
+        background-color: $green;
+        background: url(../images/program_top_green.svg);
+    }
+    
+    .park {
+        background-color: $red;
+        background: url(../images/program_top_red.svg)
+    }
+    
+    .pladsen {
+        background-color: $darkblue;
+        background: url(../images/program_top_blue.svg);
+    }
+    
+    .arena-bg {
+        background-color: $green;
+        background: url(../images/program_green.svg);
+        top: 0px;
+        padding: 5%;
+        padding-left: 10%;
+        width: auto;
+    }
+
+    .park-bg {
+        background-color: $red;
+        background: url(../images/program_red.svg);
+        top: 0px;
+        padding: 5%;
+        padding-left: 10%;
+        width: auto;
+    }
+
+    .pladsen-bg {
+        background-color: $darkblue;
+        background: url(../images/program_blue.svg);
+        top: 0px;
+        padding: 5%;
+        padding-left: 10%;
+        width: auto;
+    }
+}
+
+
 
 /* ======================================================
    Footer
@@ -528,28 +874,38 @@ footer {
     min-height: 80px;
     @extend .skewDownRight;
     margin-top: -3vw;
-    
     section {
         width: 70%;
         left: 15%;
         position: relative;
         display: flex;
-        
         article {
             width: 50%;
-            
             &.footer-left {
                 text-align: left;
+                margin-top:1em;
             }
-
             &.footer-right {
                 text-align: right;
+                display: flex;
+                justify-content: flex-end;
+                
+                .align-bottom {
+                    align-self: flex-end;
+                    width: 10%;
+              
+                
+                &#arrowtop{
+                    
+                    transform: rotate(270deg);
+                    display: none;
+                }
+                    
+                      }
             }
-            
             .icon-text {
                 width: 100%;
                 padding-bottom: 0.25em;
-                
                 p {
                     position: relative;
                     margin: 0;
@@ -557,7 +913,6 @@ footer {
                     vertical-align: top;
                     display: inline-block;
                 }
-
                 img {
                     height: 1.5em;
                     width: 1.5em;
@@ -565,7 +920,6 @@ footer {
                     padding-right: 1em;
                 }
             }
-            
             a {
                 width: 100%;
                 img {
@@ -574,13 +928,13 @@ footer {
                 }
             }
         }
-    } 
+    }
 }
+
 
 /* ---------- under 980px ------------------- */
 
-@media only screen 
-    and (max-width: 980px) {
+@media only screen and (max-width: 980px) {
     #navbar {
         display: none;
     }
@@ -591,121 +945,166 @@ footer {
         p {
             display: none;
         }
-
         #play {
             top: 45%;
             width: 300px;
             margin-left: -150px;
-            
             p {
                 font-size: 60pt;
                 line-height: 120px;
             }
-            
             img {
                 height: 120px;
             }
-
             &:hover {
-                top:44%;
+                top: 44%;
             }
         }
     }
+    
     #logoCont {
         //display: none;
-        
         #logo {
             height: 200px;
         }
-        
         #hideTopLogo {
             width: 40px;
             margin: 0.5vw 0 0 30px;
         }
     }
+    
     #sideLogo {
         display: none;
     }
+    
     .overlaySmall {
         padding: 6vw 6vw 11vh 6vw;
     }
     
+    #socialfeed {
+        h2 {
+            font-size: 4em;
+        }
         
-        #socialfeed {
+        .social-feed-container {
+            margin-top: 2em;
             
-            h1 {
-                font-size: 80pt;
+            .social-feed-element {
+                margin: 0.5em;
+                height: auto;
+                box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1) !important;
+                width: 40% !important;
             }
         }
         
+
+    }
+    
     footer {
         font-size: 14pt;
         padding: 20px 0 30px 0;
-        
-        #cr{
+        #cr {
             font-size: 11pt;
             //padding-bottom: 10px;
         }
     }
 }
 
+@media only screen and (max-width: 360px){
+    
+    
+    .modal-header{
+        
+           top: 5%;
+    font-size: 2.5em; 
+    }
+    
+    .kryds{
+        
+        width: 1.5em;
+    }
+    
+    #tabs h2{
+            font-size: 0.9em;
+        
+    }
+    
+    .modalCont{
+            left: 10%;
+width: 80%;
+        
+    }
+}
+
+
 /* ---------- under 768px ------------------- */
 
-@media only screen 
-    and (max-width: 768px) {
-        
-        /* ----- @extends ------ */
-
-        .skewMobileRight {
-            -webkit-clip-path: polygon(0 0, 100% 3vw, 100% 100%, 0% 100%);
-            clip-path: polygon(0 0, 100% 3vw, 100% 100%, 0% 100%);
+@media only screen and (max-width: 768px) {
+    /* ----- @extends ------ */
+    .skewMobileRight {
+        -webkit-clip-path: polygon(0 0, 100% 3vw, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 3vw, 100% 100%, 0% 100%);
+    }
+    .skewMobileLeft {
+        -webkit-clip-path: polygon(0 3vw, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 3vw, 100% 0%, 100% 100%, 0% 100%);
+    }
+    /*end*/
+    #row1,
+    #row2,
+    #row3 {
+        margin: 0;
+        display: block;
+        clip-path: none;
+        -webkit-clip-path: none;
+    }
+    .boksBig,
+    .boksSmall {
+        display: flex;
+        width: 100%;
+    }
+    #boks1,
+    #boks3,
+    #boks5 {
+        @extend .skewMobileRight;
+        margin-top: -3vw;
+        min-height: 30vh;
+    }
+    #boks2,
+    #boks4,
+    #boks6 {
+        @extend .skewMobileLeft;
+        margin-top: -3vw;
+        min-height: 40vh;
+    }
+    #row3 #boks6 div {
+        z-index: 0;
+    }
+    .sectionheading {
+        font-size: 3em;
+    }
+    .sectiontext {
+        font-size: 1.2em;
+        width: 65vw;
+        margin-top: 1vh;
+    }
+    
+    #socialfeed {
+        h2 {
+            font-size: 4em;
         }
-
-        .skewMobileLeft {
-            -webkit-clip-path: polygon(0 3vw, 100% 0%, 100% 100%, 0% 100%);
-            clip-path: polygon(0 3vw, 100% 0%, 100% 100%, 0% 100%);
+        .social-feed-container {
+            margin-top: 2em;
+            .social-feed-element {
+                margin: 0.5em;
+                height: auto;
+                box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1) !important;
+                width: 80% !important;
+            }
         }
-        
-        /*end*/
-        
-        #row1, #row2, #row3 {
-            margin: 0;
-            display: block;
-            clip-path: none;
-            -webkit-clip-path: none;
-        }
-        
-        .boksBig, .boksSmall {
-            display: flex;
-            width: 100%;
-        }
-        
-        #boks1, #boks3, #boks5 {
-            @extend .skewMobileRight;
-            margin-top: -3vw;
-            min-height: 30vh;
-        }
-        
-        #boks2, #boks4, #boks6 {
-            @extend .skewMobileLeft;
-            margin-top: -3vw;
-            min-height: 40vh;
-        }
-        
-        #row3 #boks6 div {
-            z-index: 0;
-        }
-        
-        .sectionheading {
-            font-size: 3em;
-        }
-        
-        .sectiontext {
-            font-size: 1.2em;
-            width: 65vw;
-            margin-top: 1vh;        }
-        
-        #clockdiv div > span{
-            font-size: 10vw;
-        }
+    }
+    
+    #clockdiv div > span {
+        font-size: 10vw;
+    }
 }

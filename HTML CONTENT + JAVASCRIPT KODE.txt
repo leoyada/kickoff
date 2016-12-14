@@ -1,0 +1,62 @@
+//INKLUDER TEMPLATE.HTML FILEN I RODEN AF SIDEN ELLER I MAPPEN "HTML" 
+
+
+<section class="box-row-4 row">
+                <article class="social-box box col-lg-12" id="social">
+                    <h4 class="modal-title box-header-modal">Følg Med</h4>
+                    <div class="social-feed-container col-lg-12">
+                    </div>
+                </article>
+            </section>  
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/locale/da.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dot/1.1.0/doT.min.js"></script>
+   <script src="js/codebird.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/social-feed/0.1.2/js/jquery.socialfeed.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.social-feed-container').socialfeed({
+     
+                   // Facebook
+            facebook:{
+        accounts: ['@aarhuskickoff2017'],  //Array: Specify a list of accounts from which to pull wall posts
+        limit: 2,                                   //Integer: max number of posts to load
+        access_token: '250741511643378|S4JeWWSaNjr0VAbmLvIJbY_iO7g'  //String: "APP_ID|APP_SECRET" - access token from facebook developer site app permission
+    },
+            // Twitter
+            twitter:{
+        accounts: ['@aarhuskickoff'],                      //Array: Specify a list of accounts from which to pull tweets
+        limit: 2,                                   //Integer: max number of tweets to load
+        consumer_key: 'ZrmFtu8rAYFISGES9OuEZ69bw',          //String: consumer key. make sure to have your app read-only
+        consumer_secret: '6JZFI9OjKDnKhW9aLqoKOyAnf0HTZsFs617CozQ4qyxnWZTDGv' //String: consumer secret key. make sure to have your app read-only
+     },
+                
+            
+
+            
+            
+
+
+
+            // GENERAL SETTINGS
+                                              
+   // GENERAL SETTINGS
+                                         //Integer: For posts with text longer than this length, show an ellipsis.
+    show_media:true,                                //Boolean: if false, doesn't display any post images
+    update_period: 10000,
+    template: "template.html",
+    date_format: "MMMM Do YYYY, h:mm:ss a",          //String: Display format of the date attribute (see http://momentjs.com/docs/#/displaying/format/)
+    date_locale: "da",                              //String: The locale of the date (see: http://momentjs.com/docs/#/i18n/changing-locale/)
+    moderation: function(content) {                 //Function: if returns false, template will have class hidden
+        return  (content.text) ? content.text.indexOf('fuck') == -1 : true;
+    },
+    callback: function() {                          //Function: This is a callback function which is evoked when all the posts are collected and displayed
+        console.log("All posts collected!");
+    }
+
+        });
+    });
+
+    </script>

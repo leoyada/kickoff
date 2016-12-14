@@ -1,0 +1,77 @@
+.social-feed-container{
+    
+      display: flex !important;
+  
+  /* Then we define the flow direction and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+
+  /* Then we define how is distributed the remaining space */
+  justify-content: center;
+
+    margin-top: 8em;
+
+}
+
+.media-body{
+width: auto;
+    height: auto;
+      margin-top: -2.5em;
+    margin-left: 3em;
+}
+
+.social-feed-element{
+        margin: 0.8em;
+    height: auto;
+        box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1) !important;
+
+}
+
+
+.social-feed-text{
+    
+    color: black;
+}
+
+#socialfeedcontent{
+    
+    background-color: white !important;
+}
+
+#facebookfooter{
+        content: url("../img/facebook_white.svg") !important
+
+    
+}
+
+#twitterfooter{
+        content: url("../img/twitter_white.svg") !important
+
+    
+}
+
+#instafooter{
+    
+        content: url("../img/insta_white.svg") !important
+
+}
+
+
+#socialfeedicons{
+    
+    color: black;
+}
+
+.author-title{
+    
+    font-size: 0.9em !important;
+}
+
+#timeagotext{
+    
+    float: left !important;
+    font-size: 0.8em;
+}
